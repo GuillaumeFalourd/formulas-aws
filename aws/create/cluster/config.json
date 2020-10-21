@@ -1,0 +1,95 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_CIRCLECI_TOKEN"
+    },
+    {
+      "name": "access_key",
+      "type": "CREDENTIAL_AWS_ACCESSKEYID"
+    },
+    {
+      "name": "secret_access_key",
+      "type": "CREDENTIAL_AWS_SECRETACCESSKEY"
+    },
+    {
+      "label": "Project name: ",
+      "name": "project_name",
+      "type": "text",
+      "tutorial": "Your project name e.g.: awesome-project"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Create a private repository for this project?",
+      "name": "private",
+      "type": "bool",
+      "tutorial": "Choose one option"
+    },
+    {
+      "label": "Type your region: ",
+      "name": "region",
+      "type": "text",
+      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1",
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 6
+      }
+    },
+    {
+      "label": "Type bucket name: ",
+      "name": "bucket",
+      "type": "text",
+      "tutorial": "Bucket name e.g.: some-aws-bucket"
+    },
+    {
+      "label": "Type the vpc name:",
+      "name": "vpc_name",
+      "type": "text",
+      "tutorial": "The vpc name e.g.: some-vpc"
+    },
+    {
+      "label": "Type the vpc_cidr:",
+      "name": "vpc_cidr",
+      "type": "text",
+      "tutorial": "The vpc cidr e.g.: 10.0.0.0/16"
+    },
+    {
+      "label": "Type your vpc_azs:",
+      "name": "vpc_azs",
+      "type": "text",
+      "tutorial": "AWS vpc_azs e.g.: us-west-1a, us-west-1b"
+    },
+    {
+      "label": "Type the customer name:",
+      "name": "customer_name",
+      "type": "text",
+      "tutorial": "A customer name e.g.: Dennis Ritchie"
+    },
+    {
+      "label": "Type the cluster name:",
+      "name": "cluster_name",
+      "type": "text",
+      "tutorial": "Your EKS cluster name (ex: projectname)"
+    },
+    {
+      "label": "Type the domain name:",
+      "name": "domain_name",
+      "type": "text",
+      "tutorial": "Your EKS domain name (ex: projectname.io)"
+    }
+  ]
+}

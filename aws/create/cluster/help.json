@@ -1,0 +1,4 @@
+{
+	"short": "Formula that create an EKS on AWS",
+	"long": "Formula that configures a EKS on AWS using Github, CircleCI and Terraform"
+}
