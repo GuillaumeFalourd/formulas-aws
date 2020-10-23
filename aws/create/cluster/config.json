@@ -10,7 +10,7 @@
       "type": "CREDENTIAL_GITHUB_TOKEN"
     },
     {
-      "name": "token",
+      "name": "circleci_token",
       "type": "CREDENTIAL_CIRCLECI_TOKEN"
     },
     {
