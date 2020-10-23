@@ -202,7 +202,6 @@ func (in Inputs) mergeMain() {
 	}
 
 	path0 := path.Join(in.PWD, maintfFile)
-	println("path0:", path0)
 
 	err = InsertStringToFile(path0, terraformConfig, 12)
 	if err != nil {

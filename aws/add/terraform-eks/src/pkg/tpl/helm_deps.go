@@ -63,6 +63,7 @@ resource "helm_release" "cluster-autoscaler" {
   repository = "stable"
   chart      = "stable/cluster-autoscaler"
   version    = "6.0.0"
+  timeout    = "600"
   namespace  = "cluster-autoscaler"
 
   set {

@@ -45,7 +45,6 @@ runFormula() {
 
   echo
   echo -e '\033[1m6️⃣  ADD EKS CONFIGURATIONS\033[0m'
-  echo
   echo '{"cluster_name":"'$CLUSTER_NAME'", "domain_name":"'$DOMAINE_NAME'"}' | rit aws add terraform-eks --stdin
   sleep 3s
 
@@ -75,5 +74,5 @@ runFormula() {
 
   echo
   echo "🚀 CircleCI pipeline initiated at:"
-  echo "https://app.circleci.com/pipelines/github/$USERNAME/$PROJECT_NAME?branch=qa"
+  echo "🔎 https://app.circleci.com/pipelines/github/$USERNAME/$PROJECT_NAME?branch=qa"
 }
