@@ -19,7 +19,7 @@ runFormula() {
   echo
   echo -e '\033[1m3️⃣  CREATE BUCKET ON AWS\033[0m'
   echo
-  #echo '{"region":"'$REGION'", "bucket":"'$BUCKET'"}' | rit aws create bucket --stdin
+  echo '{"region":"'$REGION'", "bucket":"'$BUCKET'"}' | rit aws create bucket --stdin
   sleep 3s
 
   echo
@@ -52,8 +52,8 @@ runFormula() {
   echo
   echo -e '\033[1m7️⃣  CONFIGURE CIRCLECI ENVIRONMENT (QA)\033[0m'
   echo
-  #echo '{"repo_owner":"'$USERNAME'", "repo_name":"'$PROJECT_NAME'", "env_name":"AWS_ACCESS_KEY_ID_QA", "env_value":"'$ACCESS_KEY'"}' | rit circleci add env --stdin
-  #echo '{"repo_owner":"'$USERNAME'", "repo_name":"'$PROJECT_NAME'", "env_name":"AWS_SECRET_ACCESS_KEY_QA", "env_value":"'$SECRET_ACCESS_KEY'"}' | rit circleci add env --stdin
+  echo '{"repo_owner":"'$USERNAME'", "repo_name":"'$PROJECT_NAME'", "env_name":"AWS_ACCESS_KEY_ID_QA", "env_value":"'$ACCESS_KEY'"}' | rit circleci add env --stdin
+  echo '{"repo_owner":"'$USERNAME'", "repo_name":"'$PROJECT_NAME'", "env_name":"AWS_SECRET_ACCESS_KEY_QA", "env_value":"'$SECRET_ACCESS_KEY'"}' | rit circleci add env --stdin
   sleep 3s
 
   echo
