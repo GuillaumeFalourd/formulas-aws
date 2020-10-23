@@ -30,11 +30,11 @@ This formula IS NOT compatible with the DOCKER flag.
 This formula allows to create and configure an EKS on AWS using Github, CircleCI and Terraform.
 To do so, it performs 8 steps:
 
-1️⃣ Create a Github Project
-2️⃣ Follow the Github project on CircleCI
-3️⃣ Create a Bucket on AWS
-4️⃣ Generate a terraform project
-5️⃣ Add VPC configurations to terraform project
-6️⃣ Add EKS configurations to terraform project
-7️⃣ Configure the CircleCI environment
-8️⃣ Commit the project on Github
+- 1️⃣ Create a Github Project
+- 2️⃣ Follow the Github project on CircleCI
+- 3️⃣ Create a Bucket on AWS
+- 4️⃣ Generate a terraform project
+- 5️⃣ Add VPC configurations to terraform project
+- 6️⃣ Add EKS configurations to terraform project
+- 7️⃣ Configure the CircleCI environment
+- 8️⃣ Commit the project on Github
