@@ -25,7 +25,7 @@
       "label": "Project name: ",
       "name": "project_name",
       "type": "text",
-      "tutorial": "Your project name e.g.: awesome-project"
+      "tutorial": "Your project name | e.g.: awesome-project"
     },
     {
       "default": "false",
@@ -33,16 +33,16 @@
         "false",
         "true"
       ],
-      "label": "Create a private repository for this project?",
+      "label": "Project will be a private repo on Github?",
       "name": "private",
       "type": "bool",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option form the list"
     },
     {
       "label": "Type your region: ",
       "name": "region",
       "type": "text",
-      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1",
+      "tutorial": "AWS region | i.e.: us-east-1, us-west-1, sa-east-1",
       "cache": {
         "active": true,
         "newLabel": "Type new value. ",
@@ -53,43 +53,43 @@
       "label": "Type bucket name: ",
       "name": "bucket",
       "type": "text",
-      "tutorial": "Bucket name e.g.: some-aws-bucket"
+      "tutorial": "Bucket name | e.g.: some-aws-bucket"
     },
     {
       "label": "Type the vpc name:",
       "name": "vpc_name",
       "type": "text",
-      "tutorial": "The vpc name e.g.: some-vpc"
+      "tutorial": "The vpc name | e.g.: some-vpc"
     },
     {
       "label": "Type the vpc_cidr:",
       "name": "vpc_cidr",
       "type": "text",
-      "tutorial": "The vpc cidr e.g.: 10.0.0.0/16"
+      "tutorial": "The vpc cidr (Classless Inter-Domain Routing) | e.g.: 10.0.0.0/16"
     },
     {
       "label": "Type your vpc_azs:",
       "name": "vpc_azs",
       "type": "text",
-      "tutorial": "AWS vpc_azs e.g.: us-west-1a, us-west-1b"
+      "tutorial": "AWS vpc azs (Available Zones) | e.g.: us-west-1a, us-west-1b"
     },
     {
       "label": "Type the customer name:",
       "name": "customer_name",
       "type": "text",
-      "tutorial": "A customer name e.g.: Dennis Ritchie"
+      "tutorial": "A customer name | e.g.: Dennis Ritchie"
     },
     {
       "label": "Type the cluster name:",
       "name": "cluster_name",
       "type": "text",
-      "tutorial": "Your EKS cluster name (ex: projectname)"
+      "tutorial": "Your EKS cluster name | e.g.: awesome-project-cluster"
     },
     {
       "label": "Type the domain name:",
       "name": "domain_name",
       "type": "text",
-      "tutorial": "Your EKS domain name (ex: projectname.io)"
+      "tutorial": "Your EKS domain name | e.g.: projectname.io"
     }
   ]
 }
