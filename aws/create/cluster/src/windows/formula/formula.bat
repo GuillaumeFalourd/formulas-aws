@@ -20,31 +20,31 @@ goto exit
   echo {"provider":"github", "project":"%PROJECT_NAME%"} | rit circleci follow project --stdin
   timeout /t 3 /nobreak > nul
 
-  echo --- Create Bucket on AWS -----------------------
+  echo --- Create Bucket on AWS ------------------------
   echo {"region":"%REGION%", "bucket":"%BUCKET%"} | rit aws create bucket --stdin
   timeout /t 3 /nobreak > nul
 
-  echo --- Generate terraform project ----------------------
-  echo -----------------------------------------------------
+  echo --- Generate terraform project ------------------
+  echo -------------------------------------------------
+  echo %cd%
   echo {"project_name":"%PROJECT_NAME%", "project_location":"%proj_loc%", "bucket_name":"%BUCKET%", "bucket_region":"%REGION%"} | rit aws generate terraform-project --stdin
-  cd %tmp1%
   timeout /t 3 /nobreak > nul
-  
-  echo --- Add VPC configurations -------------------------------------
+  cd %PROJECT_NAME%
+
+  echo --- Add VPC configurations ----------------------
   echo {"region":"%REGION%", "vpc_name":"%VPC_NAME%", "vpc_cidr":"%VPC_CIDR%", "vpc_azs":"%VPC_AZS%", "customer_name":"%CUSTOMER_NAME%"} | rit aws add terraform-vpc --stdin
   timeout /t 3 /nobreak > nul
 
-  echo --- Add EKS configurations -------------------------------------
+  echo --- Add EKS configurations ----------------------
   echo {"cluster_name":"%CLUSTER_NAME%", "domain_name":"%DOMAINE_NAME%"} | rit aws add terraform-eks --stdin
   timeout /t 3 /nobreak > nul
 
-  echo --- Configure CircleCI environment (QA) ------------------------
+  echo --- Configure CircleCI environment (QA) ---------
   echo {"repo_owner":"%USERNAME%", "repo_name":"%PROJECT_NAME%", "env_name":"AWS_ACCESS_KEY_ID_QA", "env_value":"%ACCESS_KEY%"} | rit circleci add env --stdin
   echo {"repo_owner":"%USERNAME%", "repo_name":"%PROJECT_NAME%", "env_name":"AWS_SECRET_ACCESS_KEY_QA", "env_value":"%SECRET_ACCESS_KEY%"} | rit circleci add env --stdin
   timeout /t 3 /nobreak > nul
 
-  echo --- Commit project (QA) ----------------------------------------
-  cd %CURRENT_PWD%\%PROJECT_NAME%
+  echo --- Commit project (QA) -------------------------
   git checkout -b qa
   git add .
   git commit -m "First commit from Ritchie (rit aws create cluster) formula" > nul
