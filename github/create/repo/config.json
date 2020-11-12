@@ -1,0 +1,43 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "label": "Project name: ",
+      "name": "project_name",
+      "type": "text",
+      "tutorial": "Your project name e.g.: awesome-project"
+    },
+    {
+      "label": "Project description: ",
+      "name": "project_description",
+      "type": "text",
+      "tutorial": "Your project description e.g.: Some awesome description"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Create a private repository?: ",
+      "name": "private",
+      "type": "bool",
+      "tutorial": "Choose one option"
+    },
+    {
+      "default": " ",
+      "label": "Workspace path: ",
+      "name": "workspace_path",
+      "type": "text",
+      "tutorial": "Your workspace path i.e., /home/user/my-project \n Note: An empty value create a GitHub repo with just a README file"
+    },
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    }
+  ]
+}

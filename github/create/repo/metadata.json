@@ -1,0 +1,18 @@
+{
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "mac",
+      "linux",
+      "windows"
+    ]
+  },
+  "tags": [
+    "github",
+    "create",
+    "repo"
+  ]
+}

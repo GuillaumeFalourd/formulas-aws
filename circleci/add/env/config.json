@@ -1,0 +1,43 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "name": "token",
+      "type": "CREDENTIAL_CIRCLECI_TOKEN"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type the repository owner: ",
+      "name": "repo_owner",
+      "type": "text",
+      "tutorial": "Project owner i.e., yourname"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type repository name: ",
+      "name": "repo_name",
+      "type": "text",
+      "tutorial": "Your target project repository i.e., awesome-project"
+    },
+    {
+      "label": "Type the ENV name : ",
+      "name": "env_name",
+      "type": "text",
+      "tutorial": "Pipeline environment variable name i.e., SOME_NOME"
+    },
+    {
+      "label": "Type the ENV value : ",
+      "name": "env_value",
+      "type": "password",
+      "tutorial": "Pipeline environment variable value i.e., 1234"
+    }
+  ]
+}
