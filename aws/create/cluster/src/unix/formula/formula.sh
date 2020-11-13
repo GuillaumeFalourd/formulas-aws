@@ -4,9 +4,18 @@ runFormula() {
   echo
   echo -e '\033[1m🛠  STARTING CLUSTER CREATION AUTOMATION\033[0m'
 
+  if [ -f /.dockerenv ] ; then
+    echo
+    echo -e '\033[1m💡 PROCESS EXECUTED EXCLUSIVELY ON DOCKER\033[0m'
+  fi
+
   echo
   echo -e '\033[1m1️⃣  CREATE GITHUB PROJECT\033[0m'
   echo
+  if [ -f /.dockerenv ] ; then
+    git config --global user.name $USERNAME
+    git config --global user.email $EMAIL
+  fi
   echo '{"project_name":"'$PROJECT_NAME'", "project_description":"Terraform project created with Ritchie CLI (https://ritchiecli.io)", "private":"'$PRIVATE'", "workspace_path": " "}' | rit github create repo --stdin
   sleep 3s
 

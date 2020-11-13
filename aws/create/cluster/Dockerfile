@@ -1,9 +1,6 @@
-FROM cimg/base:stable-20.04
+FROM ritclizup/rit-shell-bat-runner
 
 USER root
-
-RUN echo "Installing Ritchie on image"
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit
@@ -12,25 +9,25 @@ RUN sed -i 's/\r//g' /rit/run.sh
 RUN chmod +x /rit/set_umask.sh
 
 RUN echo "Installing Golang on image"
-RUN wget -c https://golang.org/dl/go1.15.2.linux-amd64.tar.gz
-RUN shasum -a 256 go1.7.3.linux-amd64.tar.gz
-RUN sudo tar -C /usr/local -xvzf go1.15.2.linux-amd64.tar.gz
-RUN mkdir -p ~/go_projects/{bin,src,pkg}
-RUN cd ~/go_projects
-RUN export PATH=$PATH:/usr/local/go/bin
-RUN export GOPATH="$HOME/go_projects"
-RUN export GOBIN="$GOPATH/bin"
-RUN source ~/.bash_profile
+RUN apk add --no-cache git make musl-dev go
+# Configure Go
+ENV GOROOT /usr/lib/go
+ENV GOPATH /go
+ENV PATH /go/bin:$PATH
+RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
+# Install Glide
+RUN go get -u github.com/Masterminds/glide/...
+WORKDIR $GOPATH
+CMD ["make"]
 RUN go version
 
 RUN echo "Installing Node and NPM on image"
-RUN sudo apt install nodejs
+RUN apk add --update nodejs nodejs-npm
 RUN node -v
-RUN sudo apt install npm
 RUN npm -v
 
 RUN echo "Installing Git on image"
-RUN sudo apt install git-all
+RUN apk add git
 RUN git version
 
 WORKDIR /app

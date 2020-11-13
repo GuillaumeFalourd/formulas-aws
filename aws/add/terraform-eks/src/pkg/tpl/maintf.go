@@ -30,6 +30,7 @@ module "kubernetes_cluster" {
 	cluster_version = "1.16"
 	subnets         = module.vpc.private_subnets
 	vpc_id          = module.vpc.vpc_id
+	version         = "13.0.0"
 
 	worker_groups = [
 		{

@@ -45,6 +45,13 @@ run() {
     echo "$PROJECT_DESCRIPTION" >> README.md
   fi
 
+  git config --global user.name
+  if [ -f /.dockerenv ] ; then
+    git config --global user.name $USERNAME
+    git config --global user.email $EMAIL
+  fi
+  git config --global user.name
+  exit 1
   git init
 
   git add .
