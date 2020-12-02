@@ -6,7 +6,7 @@
 
 [Contribute to the Ritchie community](https://github.com/ZupIT/ritchie-formulas/blob/master/CONTRIBUTING.md)
 
-This repository contains rit formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
+This repository contains Ritchie formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
 
 - [Gitbook](https://docs.ritchiecli.io)
 
