@@ -12,7 +12,7 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 ## Use Formulas
 
-To import this repository, you need to have [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
+To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
 
 Then, you can use the `rit add repo` command manually, or execute the command line below directly on your terminal:
 
