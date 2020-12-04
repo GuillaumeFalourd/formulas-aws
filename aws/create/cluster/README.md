@@ -38,3 +38,5 @@ To do so, it performs 8 steps:
 - 6️⃣ Add EKS configurations to terraform project
 - 7️⃣ Configure the CircleCI environment
 - 8️⃣ Commit the project on Github
+
+![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)

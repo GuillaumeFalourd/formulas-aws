@@ -10,6 +10,10 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 - [Gitbook](https://docs.ritchiecli.io)
 
+## What you'll find in this repository
+
+![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)
+
 ## Use Formulas
 
 To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
