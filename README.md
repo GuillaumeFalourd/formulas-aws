@@ -16,7 +16,7 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
 
-Then, you can use the `rit add repo` command manually, or execute the command line below directly on your terminal:
+Then, you can use the `rit add repo` command manually, or execute the command line below directly on your terminal (since CLI version 2.8.0):
 
 ```bash
 rit add repo --provider=Github --name=formulas-aws --repoUrl=https://github.com/GuillaumeFalourd/formulas-aws --priority=1
