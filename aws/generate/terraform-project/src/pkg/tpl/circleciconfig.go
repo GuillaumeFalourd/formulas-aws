@@ -12,7 +12,7 @@ references:
 
   environment: &ENVIRONMENT
     TERRAFORM_ENV : "{{.ProjectName}}"
-    TERRAFORM_VERSION: "0.12.13"
+    TERRAFORM_VERSION: "0.13.5"
 
 
   filters: &FILTERS_DELIVERY

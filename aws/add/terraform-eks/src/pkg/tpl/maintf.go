@@ -67,11 +67,6 @@ provider "helm" {
 		token                  = data.aws_eks_cluster_auth.cluster.token
 		load_config_file       = false
 	}
-
-	service_account = "tiller"
-	install_tiller  = true
-	init_helm_home  = true
-	debug           = true
 }
 
 # --------------------------------------- helm repositories
