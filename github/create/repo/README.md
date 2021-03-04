@@ -1,4 +1,9 @@
-# Create a local and remote repository
+# Ritchie Formula
+
+## Premisses
+
+- Github Account (with generated TOKEN with repository accesses)
+- You will need to set Github credentials when executing the formula or through the `rit set credential` command first.
 
 ## Command
 
@@ -6,20 +11,6 @@
 rit github create repo
 ```
 
-## Requirements
+## Description
 
-- git installed
-
-- set github username and token credentials using
-
-```bash
-rit set credential
-```
-
-## How to generate personal access token
-
-To generate a personal access token click [here](https://github.com/settings/tokens)
-
-## How it works
-
-![gif](doc/github-create-repo.gif)
+Formula to create a repository on the Github user account.

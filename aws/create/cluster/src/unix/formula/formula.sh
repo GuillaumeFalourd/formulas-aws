@@ -16,8 +16,10 @@ runFormula() {
     git config --global user.name $USERNAME
     git config --global user.email $EMAIL
   fi
-  echo '{"project_name":"'$PROJECT_NAME'", "project_description":"Terraform project created with Ritchie CLI (https://ritchiecli.io)", "private":"'$PRIVATE'", "workspace_path": " "}' | rit github create repo --stdin
-  sleep 3s
+  echo '{"rit_git_repo":"'$PROJECT_NAME'", "rit_repo_privacy":"'$PRIVATE'"}' | rit github create repo --stdin
+  sleep 2s
+  git clone https://github.com/$USERNAME/$PROJECT_NAME.git
+  sleep 1s
 
   echo
   echo -e '\033[1m2️⃣  FOLLOW PROJECT ON CIRCLECI\033[0m'
