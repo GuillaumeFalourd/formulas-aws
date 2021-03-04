@@ -69,16 +69,22 @@ resource "kubernetes_cluster_role_binding" "tiller" {
 
 
 resource "helm_release" "cluster-autoscaler" {
-  name       = "cluster-autoscaler"
-  repository = "stable"
-  chart      = "stable/cluster-autoscaler"
-  version    = "6.0.0"
-  timeout    = "600"
-  namespace  = "cluster-autoscaler"
+  name             = "cluster-autoscaler"
+  repository       = "https://kubernetes.github.io/autoscaler"
+  chart            = "cluster-autoscaler"
+  version          = "9.1.0"
+  timeout          = "600"
+  namespace        = "cluster-autoscaler"
+
 
   set {
     name  = "autoDiscovery.clusterName"
     value = var.kubernetes_cluster_name
+  }
+
+  set {
+    name  = "autoDiscovery.tags"
+    value = "kubernetes.io/cluster/${var.kubernetes_cluster_name}"
   }
 
   set {
@@ -96,6 +102,11 @@ resource "helm_release" "cluster-autoscaler" {
     value = true
   }
 
+  set {
+    name  = "image.tag"
+    value = "v1.18.1"
+  }
+
   depends_on = [
     kubernetes_cluster_role_binding.tiller,
     kubernetes_service_account.tiller
@@ -104,11 +115,11 @@ resource "helm_release" "cluster-autoscaler" {
 
 
 resource "helm_release" "external-dns" {
-  name       = "external-dns"
-  repository = "stable"
-  chart      = "stable/external-dns"
-  version    = "2.9.4"
-  namespace  = "external-dns"
+  name             = "external-dns"
+  repository       = "https://charts.bitnami.com/bitnami"
+  chart            = "external-dns"
+  version          = "3.4.1"
+  namespace        = "external-dns"
 
   set {
     name  = "provider"
@@ -138,17 +149,23 @@ resource "helm_release" "external-dns" {
   depends_on = [
     kubernetes_cluster_role_binding.tiller,
     kubernetes_service_account.tiller,
-    helm_release.aws-alb-ingress-controller
+    helm_release.aws-load-balancer-controller
   ]
 }
 
 
-resource "helm_release" "aws-alb-ingress-controller" {
-  name       = "aws-alb-ingress-controller"
-  repository = "incubator"
-  chart      = "incubator/aws-alb-ingress-controller"
-  version    = "1.0.0"
-  namespace  = "aws-alb-ingress-controller"
+resource "helm_release" "aws-load-balancer-controller" {
+  name             = "aws-load-balancer-controller"
+  repository       = "https://aws.github.io/eks-charts"
+  chart            = "aws-load-balancer-controller"
+  version          = "1.1.2"
+  namespace        = "aws-alb-ingress-controller"
+
+  set {
+    name  = "image.repository"
+    value = "602401143452.dkr.ecr.sa-east-1.amazonaws.com/amazon/aws-load-balancer-controller"
+  }
+
 
   set {
     name  = "clusterName"
@@ -156,12 +173,12 @@ resource "helm_release" "aws-alb-ingress-controller" {
   }
 
   set {
-    name  = "awsRegion"
+    name  = "region"
     value = var.region
   }
 
   set {
-    name  = "awsVpcID"
+    name  = "vpcId"
     value = var.vpc_id
   }
 
