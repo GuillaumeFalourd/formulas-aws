@@ -12,16 +12,6 @@ const (
 #   url  = "https://charts.helm.sh/incubator"
 # }
 
-# data "helm_repository" "stable" {
-#   name = "stable"
-#   url  = "https://kubernetes-charts.storage.googleapis.com"
-# }
-
-# data "helm_repository" "incubator" {
-#   name = "incubator"
-#   url  = "http://storage.googleapis.com/kubernetes-charts-incubator"
-# }
-
 data "helm_repository" "codecentric" {
   name = "codecentric"
   url  = "https://codecentric.github.io/helm-charts"
