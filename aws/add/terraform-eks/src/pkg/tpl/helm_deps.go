@@ -2,57 +2,6 @@ package tpl
 
 const (
 	HelmMaintf = `
-# data "helm_repository" "stable" {
-#   name = "stable"
-#   url  = "https://charts.helm.sh/stable"
-# }
-
-# data "helm_repository" "incubator" {
-#   name = "incubator"
-#   url  = "https://charts.helm.sh/incubator"
-# }
-
-data "helm_repository" "codecentric" {
-  name = "codecentric"
-  url  = "https://codecentric.github.io/helm-charts"
-}
-
-data "helm_repository" "loki" {
-  name = "loki"
-  url  = "https://grafana.github.io/loki/charts"
-}
-
-# ------------------------------------------- kubernetes service accounts required
-
-resource "kubernetes_service_account" "tiller" {
-  metadata {
-    name      = "tiller"
-    namespace = "kube-system"
-  }
-  depends_on = [
-    var.kubernetes_cluster,
-  ]
-}
-
-resource "kubernetes_cluster_role_binding" "tiller" {
-  metadata {
-    name = "tiller"
-  }
-  role_ref {
-    api_group = "rbac.authorization.k8s.io"
-    kind      = "ClusterRole"
-    name      = "cluster-admin"
-  }
-  subject {
-    kind      = "ServiceAccount"
-    name      = "tiller"
-    namespace = "kube-system"
-  }
-
-  depends_on = [
-    kubernetes_service_account.tiller
-  ]
-}
 
 # -------------------------------------------- misc things required to run, expose and auto scale things on k8s
 
