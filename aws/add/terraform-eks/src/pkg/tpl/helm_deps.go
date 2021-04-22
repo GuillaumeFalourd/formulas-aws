@@ -12,40 +12,8 @@ data "helm_repository" "loki" {
   url  = "https://grafana.github.io/loki/charts"
 }
 
-# ------------------------------------------- kubernetes service accounts required
-
-resource "kubernetes_service_account" "tiller" {
-  metadata {
-    name      = "tiller"
-    namespace = "kube-system"
-  }
-  depends_on = [
-    var.kubernetes_cluster,
-  ]
-}
-
-resource "kubernetes_cluster_role_binding" "tiller" {
-  metadata {
-    name = "tiller"
-  }
-  role_ref {
-    api_group = "rbac.authorization.k8s.io"
-    kind      = "ClusterRole"
-    name      = "cluster-admin"
-  }
-  subject {
-    kind      = "ServiceAccount"
-    name      = "tiller"
-    namespace = "kube-system"
-  }
-
-  depends_on = [
-    kubernetes_service_account.tiller
-  ]
-}
 
 # -------------------------------------------- misc things required to run, expose and auto scale things on k8s
-
 
 
 resource "helm_release" "cluster-autoscaler" {
@@ -54,7 +22,8 @@ resource "helm_release" "cluster-autoscaler" {
   chart            = "cluster-autoscaler"
   version          = "9.1.0"
   timeout          = "600"
-  namespace        = "cluster-autoscaler"
+  namespace        = "k8s-extras"
+  create_namespace = true
 
 
   set {
@@ -99,7 +68,8 @@ resource "helm_release" "external-dns" {
   repository       = "https://charts.bitnami.com/bitnami"
   chart            = "external-dns"
   version          = "3.4.1"
-  namespace        = "external-dns"
+  namespace        = "k8s-extras"
+  create_namespace = true
 
   set {
     name  = "provider"
@@ -127,8 +97,6 @@ resource "helm_release" "external-dns" {
   }
 
   depends_on = [
-    kubernetes_cluster_role_binding.tiller,
-    kubernetes_service_account.tiller,
     helm_release.aws-load-balancer-controller
   ]
 }
@@ -139,7 +107,8 @@ resource "helm_release" "aws-load-balancer-controller" {
   repository       = "https://aws.github.io/eks-charts"
   chart            = "aws-load-balancer-controller"
   version          = "1.1.2"
-  namespace        = "aws-alb-ingress-controller"
+  namespace        = "k8s-extras"
+  create_namespace = true
 
   set {
     name  = "image.repository"
@@ -162,10 +131,6 @@ resource "helm_release" "aws-load-balancer-controller" {
     value = var.vpc_id
   }
 
-  depends_on = [
-    kubernetes_cluster_role_binding.tiller,
-    kubernetes_service_account.tiller
-  ]
 }
 
 	`

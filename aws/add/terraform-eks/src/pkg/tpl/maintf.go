@@ -27,12 +27,15 @@ variable "kubernetes_cluster_name" {
 }
 
 module "kubernetes_cluster" {
-	source          = "terraform-aws-modules/eks/aws"
-	cluster_name    = var.kubernetes_cluster_name
-	cluster_version = "1.17"
-	subnets         = module.vpc.private_subnets
-	vpc_id          = module.vpc.vpc_id
-	version         = "13.0.0"
+	version         									= "13.2.1"
+	source          									= "terraform-aws-modules/eks/aws"
+	cluster_name    									= var.kubernetes_cluster_name
+	cluster_version 									= "1.18"
+	subnets         									= module.vpc.private_subnets
+	vpc_id          									= module.vpc.vpc_id
+	worker_create_cluster_primary_security_group_rules 	= true
+	enable_irsa                                        	= true
+	write_kubeconfig                                   	= false
 
 	worker_groups = [
 		{
