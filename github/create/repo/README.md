@@ -1,9 +1,6 @@
-# Ritchie Formula
+# Description
 
-## Premisses
-
-- Github Account (with generated TOKEN with repository accesses)
-- You will need to set Github credentials when executing the formula or through the `rit set credential` command first.
+This Github create command allows the user to create a new Github repository.
 
 ## Command
 
@@ -11,6 +8,11 @@
 rit github create repo
 ```
 
-## Description
+## Requirements
 
-Formula to create a repository on the Github user account.
+- [Git Installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Github Account
+
+## Demonstration
+
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/github/create/repo/doc/github-create-repo.gif)

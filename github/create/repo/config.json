@@ -1,30 +1,44 @@
 {
-  "dockerImageBuilder": "ritclizup/rit-python3-builder",
+  "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs": [
     {
-      "name": "rit_github_token",
-      "type": "CREDENTIAL_GITHUB_TOKEN"
+      "label": "Project name: ",
+      "name": "rit_project_name",
+      "tutorial": "Your project name e.g.: awesome-project",
+      "type": "text"
+    },
+    {
+      "label": "Project description: ",
+      "name": "rit_project_description",
+      "tutorial": "Your project description e.g.: Some awesome description",
+      "type": "text",
+      "default": "Project created with Ritchie CLI"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Create a private repository?: ",
+      "name": "rit_repo_privacy",
+      "tutorial": "Choose one option",
+      "type": "bool"
+    },
+    {
+      "default": " ",
+      "label": "Workspace path: ",
+      "name": "rit_workspace_path",
+      "tutorial": "Your workspace path i.e., /home/user/my-project \n Note: An empty value create a GitHub repo with just a README file",
+      "type": "text"
     },
     {
       "name": "rit_github_user",
       "type": "CREDENTIAL_GITHUB_USERNAME"
     },
     {
-      "label": "Repository name:",
-      "name": "rit_github_repo",
-      "tutorial": "Ex: ritchie-formulas",
-      "type": "text",
-      "required": true
-    },
-    {
-      "default": "No",
-      "label": "Is it a private repo?",
-      "name": "rit_repo_privacy",
-      "type": "text",
-      "items": [
-        "Yes",
-        "No"
-      ]
+      "name": "rit_github_token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
     }
   ]
 }
