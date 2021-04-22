@@ -13,7 +13,7 @@ goto exit
   echo --- Create Github Project -----------------------
   SET tmp1=%cd%
   cd %CURRENT_PWD%
-  echo {"project_name":"%PROJECT_NAME%", "project_description":"Terraform project created with Ritchie CLI ^(https://ritchiecli.io^)", "private":"%PRIVATE%", "workspace_path": " "} | rit github create repo --stdin
+  echo {"rit_project_name":"%PROJECT_NAME%", "rit_repo_privacy":"%PRIVATE%", "rit_workspace_path":" ", "rit_project_description":"Terraform project created with Ritchie CLI ^(https://ritchiecli.io^)"}' | rit github create repo --stdin
   timeout /t 10 /nobreak > nul
 
   echo --- Follow project on CircleCI ------------------
