@@ -58,11 +58,6 @@ resource "helm_release" "cluster-autoscaler" {
     name  = "image.tag"
     value = "v1.18.1"
   }
-
-  depends_on = [
-    kubernetes_cluster_role_binding.tiller,
-    kubernetes_service_account.tiller
-  ]
 }
 
 
