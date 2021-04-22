@@ -15,6 +15,11 @@ data "helm_repository" "loki" {
 
 # -------------------------------------------- misc things required to run, expose and auto scale things on k8s
 
+resource "kubernetes_namespace" "k8s-extras" {
+  metadata {
+    name = "k8s-extras"
+  }
+}
 
 resource "helm_release" "cluster-autoscaler" {
   name             = "cluster-autoscaler"
@@ -23,8 +28,6 @@ resource "helm_release" "cluster-autoscaler" {
   version          = "9.1.0"
   timeout          = "600"
   namespace        = "k8s-extras"
-  create_namespace = true
-
 
   set {
     name  = "autoDiscovery.clusterName"
@@ -69,7 +72,6 @@ resource "helm_release" "external-dns" {
   chart            = "external-dns"
   version          = "3.4.1"
   namespace        = "k8s-extras"
-  create_namespace = true
 
   set {
     name  = "provider"
@@ -108,7 +110,6 @@ resource "helm_release" "aws-load-balancer-controller" {
   chart            = "aws-load-balancer-controller"
   version          = "1.1.2"
   namespace        = "k8s-extras"
-  create_namespace = true
 
   set {
     name  = "image.repository"
