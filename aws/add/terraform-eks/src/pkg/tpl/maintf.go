@@ -12,6 +12,8 @@ data "aws_eks_cluster_auth" "cluster" {
 	name = module.kubernetes_cluster.cluster_id
 }
 
+data "aws_caller_identity" "getidentity" {}
+
 provider "kubernetes" {
 	host                   = data.aws_eks_cluster.cluster.endpoint
 	cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
@@ -25,12 +27,15 @@ variable "kubernetes_cluster_name" {
 }
 
 module "kubernetes_cluster" {
-	source          = "terraform-aws-modules/eks/aws"
-	cluster_name    = var.kubernetes_cluster_name
-	cluster_version = "1.16"
-	subnets         = module.vpc.private_subnets
-	vpc_id          = module.vpc.vpc_id
-	version         = "13.0.0"
+	version         									= "13.2.1"
+	source          									= "terraform-aws-modules/eks/aws"
+	cluster_name    									= var.kubernetes_cluster_name
+	cluster_version 									= "1.17"
+	subnets         									= module.vpc.private_subnets
+	vpc_id          									= module.vpc.vpc_id
+	worker_create_cluster_primary_security_group_rules 	= true
+	enable_irsa                                        	= true
+	write_kubeconfig                                   	= false
 
 	worker_groups = [
 		{
@@ -39,6 +44,14 @@ module "kubernetes_cluster" {
 		}
 	]
 }
+
+map_users = [
+	{
+		userarn  = "arn:aws:iam::${data.aws_caller_identity.getidentity.account_id}:user/GuillaumeFalourd"
+		username = "jenkins"
+		groups   = ["system:masters"]
+	}
+]
 
 # --------------------------------------- dns zone to expose your applications
 variable "domain_name" {

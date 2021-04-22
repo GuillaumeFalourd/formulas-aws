@@ -16,7 +16,7 @@ runFormula() {
     git config --global user.name $USERNAME
     git config --global user.email $EMAIL
   fi
-  echo '{"rit_git_repo":"'$PROJECT_NAME'", "rit_repo_privacy":"'$PRIVATE'"}' | rit github create repo --stdin
+  echo '{"rit_github_repo":"'$PROJECT_NAME'", "rit_repo_privacy":"'$PRIVATE'"}' | rit github create repo --stdin
   sleep 2s
   git clone https://github.com/$USERNAME/$PROJECT_NAME.git
   sleep 1s

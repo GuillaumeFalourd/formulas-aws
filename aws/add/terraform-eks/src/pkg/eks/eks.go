@@ -27,7 +27,7 @@ const (
 	iamK8SModule  = "src/modules/iam_k8s"
 	variableQA    = "src/variables/qa.tfvars"
 
-	terraformConfig = "\tkubernetes = \"~> 1.11.0\"\n\tlocal      = \"1.4.0\"\n\ttemplate   = \"2.1.2\"\n\thelm       = \"0.10.6\"\n\texternal   = \"1.2.0\"\n\ttls        = \"2.1.1\"\n\tarchive    = \"1.3.0\"\n\trandom     = \"2.2.1\"\n"
+	terraformConfig = "\tkubernetes = \"~> 1.11.0\"\n\tlocal      = \"1.4.0\"\n\ttemplate   = \"2.1.2\"\n\thelm       = \"1.3.0\"\n\texternal   = \"1.2.0\"\n\ttls        = \"2.1.1\"\n\tarchive    = \"1.3.0\"\n\trandom     = \"2.2.1\"\n"
 )
 
 const (
