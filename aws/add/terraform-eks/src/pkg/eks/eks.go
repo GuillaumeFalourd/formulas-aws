@@ -203,7 +203,7 @@ func (in Inputs) mergeMain() {
 
 	path0 := path.Join(in.PWD, maintfFile)
 
-	err = InsertStringToFile(path0, terraformConfig, 12)
+	err = InsertStringToFile(path0, terraformConfig, 11)
 	if err != nil {
 		color.Red(fmt.Sprintf("error TEST"))
 	}

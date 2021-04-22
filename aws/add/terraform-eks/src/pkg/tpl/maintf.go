@@ -12,8 +12,6 @@ data "aws_eks_cluster_auth" "cluster" {
 	name = module.kubernetes_cluster.cluster_id
 }
 
-data "aws_caller_identity" "getidentity" {}
-
 provider "kubernetes" {
 	host                   = data.aws_eks_cluster.cluster.endpoint
 	cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
@@ -44,14 +42,6 @@ module "kubernetes_cluster" {
 		}
 	]
 }
-
-map_users = [
-	{
-		userarn  = "arn:aws:iam::${data.aws_caller_identity.getidentity.account_id}:user/GuillaumeFalourd"
-		username = "jenkins"
-		groups   = ["system:masters"]
-	}
-]
 
 # --------------------------------------- dns zone to expose your applications
 variable "domain_name" {
