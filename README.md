@@ -12,19 +12,22 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 ![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)
 
-### How does it work?
+## How does it work?
 
-#### Execute the `rit aws create cluster`command:
+### 1 - Execute the `rit aws create cluster`command:
+
 ![](https://user-images.githubusercontent.com/22433243/115786294-f96ca180-a396-11eb-8fe5-227e1c2448c9.png)
 
-#### Check the code on your repository:
+### 2 - Check the code on your repository:
 
 [Repository ritchie-tdc-recife](https://github.com/GuillaumeFalourd/ritchie-tdc-recife/tree/qa)
 
-#### Wait for the pipeline to run on circleci:
+### 3 - Wait for the pipeline to run on circleci:
+
 ![](https://user-images.githubusercontent.com/22433243/115786320-05586380-a397-11eb-8824-f4862326ee00.png)
 
-#### Check your cluster on AWS:
+### 4 - Check your cluster on AWS:
+
 ![](https://user-images.githubusercontent.com/22433243/115786346-11442580-a397-11eb-9288-f48ddc6a7473.png)
 
 
@@ -42,7 +45,7 @@ Finally, you can check if the repository has been imported correctly by executin
 
 ## How to give priority
 
-The commons repository installed through the `rit init` command of Ritchie CLI has duplicated commands with the formulas-aws repository.
+The commons repository installed through the `rit init` command of Ritchie CLI has duplicated commands with the `formulas-aws` repository.
 
 You have to `set priority 0` for the formulas-aws repository, and `set priority 1` for the commons repository, for the `rit aws create cluster` command to work.
 
