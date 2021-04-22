@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "cli-color": "^2.0.0"
   },
   "main": "index.js",
