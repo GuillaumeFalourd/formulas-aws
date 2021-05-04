@@ -12,6 +12,16 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 ![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)
 
+### Caution
+
+This repository is a **DEMO** to show what is possible to perform using Ritchie CLI.
+
+The formula's templates use specific and sometimes latest providers versions (for aws, terraform, helm, kubernetes, etc...). 
+
+Therefore, the pipeline created by the formula may not work without updating the versions compatibility in the future.
+
+If that happens, the recommendation is to fork the repo and update the templates' versions.
+
 ## How does it work?
 
 ### 1 - Execute the `rit aws create cluster`command:
@@ -29,7 +39,6 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 ### 4 - Check your cluster on AWS:
 
 ![](https://user-images.githubusercontent.com/22433243/115786346-11442580-a397-11eb-9288-f48ddc6a7473.png)
-
 
 ## Use Formulas
 
