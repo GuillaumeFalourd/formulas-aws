@@ -2,17 +2,17 @@
 
 ![Rit banner](/docs/img/ritchie-banner.png)
 
-## Documentation
+## 📚 Documentation
 
 This repository contains Ritchie formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
 
 - [Ritchie CLI documentation](https://docs.ritchiecli.io)
 
-## What you'll find in this repository
+## 🔎 What you'll find in this repository
 
 ![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)
 
-### Caution
+### ⚠️  Caution
 
 This repository is a **DEMO** to show what is possible to perform using Ritchie CLI.
 
@@ -22,7 +22,7 @@ Therefore, the pipeline created by the formula may not work without updating the
 
 If that happens, the recommendation is to fork the repo and update the templates' versions.
 
-## How does it work?
+## ⚙️  How does it work?
 
 ### 1 - Execute the `rit aws create cluster`command:
 
@@ -40,13 +40,13 @@ If that happens, the recommendation is to fork the repo and update the templates
 
 ![](https://user-images.githubusercontent.com/22433243/115786346-11442580-a397-11eb-9288-f48ddc6a7473.png)
 
-## Sample repositories used for demonstrations:
+## 🗃 Sample repositories used for demonstrations:
 
 - **12.04.2020**: [ritchie-tdc-recife](https://github.com/GuillaumeFalourd/ritchie-tdc-recife) 
 - **10.28.2020**: [ritchie-tdc-poa](https://github.com/GuillaumeFalourd/ritchie-tdc-poa) 
 - **30.04.2021**: [ritchie-demo-create-cluster](https://github.com/GuillaumeFalourd/ritchie-demo-create-cluster) 
 
-## Use Formulas
+## 📦 Use Formulas
 
 To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
 
@@ -58,7 +58,7 @@ rit add repo --provider="Github" --name="formulas-aws" --repoUrl="https://github
 
 Finally, you can check if the repository has been imported correctly by executing the `rit list repo` command.
 
-## How to give priority
+## 🆙 How to give priority
 
 The commons repository installed through the `rit init` command of Ritchie CLI has duplicated commands with the `formulas-aws` repository.
 
@@ -66,9 +66,9 @@ You have to `set priority 0` for the formulas-aws repository, and `set priority 
 
 This can be achieved through the `rit set repo-priority` command.
 
-## Contribute to the repository
+## ♻️ Contribute to the repository
 
-### Creating formulas
+### 🆕 Creating formulas
 
 1. Fork and clone the repository
 2. Create a branch: `git checkout -b <branch_name>`
@@ -78,7 +78,7 @@ and commit your implementation: `git commit -m '<commit_message>`
 5. Push your branch: `git push origin <project_name>/<location>`
 6. Open a pull request on the repository for analysis.
 
-### Updating Formulas
+### 🆒 Updating Formulas
 
 1. Fork and clone the repository
 2. Create a branch: `git checkout -b <branch_name>`
