@@ -1,6 +1,6 @@
 # Formulas AWS
 
-![Rit banner](/docs/img/ritchie-banner.png)
+<img width="953" alt="title" src="https://user-images.githubusercontent.com/22433243/117589694-889ce780-b101-11eb-84fa-b197d0b72ee8.png">
 
 ## 📚 Documentation
 
