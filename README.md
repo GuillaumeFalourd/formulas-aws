@@ -40,6 +40,12 @@ If that happens, the recommendation is to fork the repo and update the templates
 
 ![](https://user-images.githubusercontent.com/22433243/115786346-11442580-a397-11eb-9288-f48ddc6a7473.png)
 
+## Sample repositories used for demonstrations:
+
+- **12.04.2020**: [ritchie-tdc-recife](https://github.com/GuillaumeFalourd/ritchie-tdc-recife) 
+- **10.28.2020**: [ritchie-tdc-poa](https://github.com/GuillaumeFalourd/ritchie-tdc-poa) 
+- **30.04.2021**: [ritchie-demo-create-cluster](https://github.com/GuillaumeFalourd/ritchie-demo-create-cluster) 
+
 ## Use Formulas
 
 To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
