@@ -12,6 +12,8 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 ![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)
 
+[![VIDEO](https://user-images.githubusercontent.com/22433243/118302743-fc9d0e00-b4ba-11eb-86d9-50dc0e6a2ac5.jpeg)](https://www.youtube.com/watch?v=C3jYQBUf4Us)
+
 ### ⚠️  Caution
 
 This repository is a **DEMO** to show what is possible to perform using Ritchie CLI.
