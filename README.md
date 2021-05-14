@@ -26,7 +26,7 @@ If that happens, the recommendation is to fork the repo and update the templates
 
 ### Youtube Video
 
-[![Youtube video](https://user-images.githubusercontent.com/22433243/118302743-fc9d0e00-b4ba-11eb-86d9-50dc0e6a2ac5.jpeg)](https://www.youtube.com/watch?v=C3jYQBUf4Us)
+[![Youtube video](https://user-images.githubusercontent.com/22433243/118325022-38df6700-b4d9-11eb-860b-12131567474f.png)](https://www.youtube.com/watch?v=C3jYQBUf4Us)
 
 ### 1 - Execute the `rit aws create cluster`command:
 
