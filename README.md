@@ -10,6 +10,26 @@ This repository contains Ritchie formulas which can be executed by the [ritchie-
 
 - [Ritchie CLI documentation](https://docs.ritchiecli.io)
 
+## 📦 Use Formulas
+
+To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
+
+Then, you can use the `rit add repo` command manually, or execute the command line below directly on your terminal (since CLI version 2.8.0):
+
+```bash
+rit add repo --provider="Github" --name="formulas-aws" --repoUrl="https://github.com/GuillaumeFalourd/formulas-aws" --priority=1
+```
+
+Finally, you can check if the repository has been imported correctly by executing the `rit list repo` command.
+
+### 🆙 How to give priority
+
+The commons repository installed through the `rit init` command of Ritchie CLI has duplicated commands with the `formulas-aws` repository.
+
+You have to `set priority 0` for the formulas-aws repository, and `set priority 1` for the commons repository, for the `rit aws create cluster` command to work.
+
+This can be achieved through the `rit set repo-priority` command.
+
 ## 🔎 What you'll find in this repository
 
 ![Rit aws create cluster](/docs/img/rit-aws-create-cluster.jpg)
@@ -51,26 +71,6 @@ If that happens, the recommendation is to fork the repo and update the templates
 - **12.04.2020**: [ritchie-tdc-recife](https://github.com/GuillaumeFalourd/ritchie-tdc-recife) 
 - **10.28.2020**: [ritchie-tdc-poa](https://github.com/GuillaumeFalourd/ritchie-tdc-poa) 
 - **30.04.2021**: [ritchie-demo-create-cluster](https://github.com/GuillaumeFalourd/ritchie-demo-create-cluster) 
-
-## 📦 Use Formulas
-
-To import this repository, you need [Ritchie CLI installed](https://docs.ritchiecli.io/getting-started/installation)
-
-Then, you can use the `rit add repo` command manually, or execute the command line below directly on your terminal (since CLI version 2.8.0):
-
-```bash
-rit add repo --provider="Github" --name="formulas-aws" --repoUrl="https://github.com/GuillaumeFalourd/formulas-aws" --priority=1
-```
-
-Finally, you can check if the repository has been imported correctly by executing the `rit list repo` command.
-
-## 🆙 How to give priority
-
-The commons repository installed through the `rit init` command of Ritchie CLI has duplicated commands with the `formulas-aws` repository.
-
-You have to `set priority 0` for the formulas-aws repository, and `set priority 1` for the commons repository, for the `rit aws create cluster` command to work.
-
-This can be achieved through the `rit set repo-priority` command.
 
 ## ♻️ Contribute to the repository
 
