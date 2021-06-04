@@ -1,4 +1,4 @@
-[![Security Pipeline](https://github.com/GuillaumeFalourd/formulas-aws/actions/workflows/security_pipeline.yml/badge.svg)](https://github.com/GuillaumeFalourd/formulas-aws/actions/workflows/security_pipeline.yml)
+[![Security Pipeline](https://github.com/GuillaumeFalourd/formulas-aws/actions/workflows/security_pipeline.yml/badge.svg)](https://github.com/GuillaumeFalourd/formulas-aws/actions/workflows/security_pipeline.yml) [![Terraform Security Scan](https://github.com/GuillaumeFalourd/formulas-aws/actions/workflows/terraform_security_scan.yml/badge.svg)](https://github.com/GuillaumeFalourd/formulas-aws/actions/workflows/terraform_security_scan.yml)
 
 # Formulas AWS
 
